@@ -1,0 +1,35 @@
+{% extends "GhaenCollegeScrumBundle:Parent:administration_menu.html.twig" %}
+
+{% block container -%}
+    <h1>ایجاد تیم</h1>
+    <form action="{{ path('team_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+        {{  form_widget(form._token) }}
+        <label>
+            {{"team.title"|trans({},"team","fr") }}
+        </label>
+        {{ form_widget(form.title) }}</br></br>
+        <label>
+            {{"team.description"|trans({},"team","fr") }}
+        </label>
+        {{ form_widget(form.description) }}</br></br>
+        <label>
+            {{"team.members"|trans({},"team","fr") }}
+        </label>
+        {{ form_widget(form.members) }}</br></br>
+        <label>
+            {{"team.scrum_master"|trans({},"team","fr") }}
+        </label>
+        {{ form_widget(form.scrum_master) }}</br></br>
+        <p>
+            <button class="btn btn-primary" type="submit">ایجاد</button>
+        </p>
+    </form>
+        <ul class="record_actions">
+    <li>
+        <a class="btn btn-danger" href="{{ path('team') }}">
+            برگشت به لیست تیم ها
+        </a>
+    </li>
+</ul>
+{% endblock %}

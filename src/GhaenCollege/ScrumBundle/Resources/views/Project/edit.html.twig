@@ -1,0 +1,90 @@
+{% extends 'GhaenCollegeScrumBundle:Parent:administration_menu.html.twig' %}
+
+{% block title -%}
+    <title>ویرایش پروژه</title>
+{% endblock %}
+{% block stylesheet %}
+    <style>.lblheight{height: 35px}
+    .submit_footer{clear: both;padding-right: 40%}
+</style>
+{% endblock %}
+{% block container %}
+    <h1>ویرایش پروژه</h1>
+
+    <form action="{{ path('project_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+        <input type="hidden" name="_method" value="PUT" />
+        {{ form_errors(edit_form) }}
+        {{  form_widget(edit_form._token) }}
+        <div class="span4">
+            {{ form_widget(edit_form.productOwner) }}
+            {{ form_widget(edit_form.status) }}
+            {{ form_widget(edit_form.description) }}
+            {{ form_widget(edit_form.createDate) }}
+            {{ form_widget(edit_form.endDate) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"project.Productowner"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Status"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Description"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Createdate"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Enddate"|trans({},"project","fr") }}
+            </label>
+        </div>
+        <div class="span4">
+            {{ form_widget(edit_form.title) }}
+            {{ form_widget(edit_form.schedule) }}
+            {{ form_widget(edit_form.parent_project) }}
+            {{ form_widget(edit_form.startDate) }}
+            {{ form_widget(edit_form.builder) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"project.Title"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Schedule"|trans({},"project","fr") }}
+            </label>
+            <label>
+                {{"project.Parent"|trans({},"project","fr") }}
+            </label>
+            <label>
+                {{"project.Startdate"|trans({},"project","fr") }}
+            </label>
+            <label>
+                {{"project.Builder"|trans({},"project","fr") }}
+            </label>
+        </div>
+
+        <div class="span12">
+            <p>
+                <button type="submit">ویرایش</button>
+            </p>
+        </div>
+    </form>
+
+        <div class="submit_footer">
+            <ul class="record_actions">
+                <li>
+                    <a href="{{ path('project') }}">
+                        برگشت به لیست
+                    </a>
+                </li>
+                <li>
+                    <form action="{{ path('project_delete', { 'id': entity.id }) }}" method="post">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        {{ form_widget(delete_form) }}
+                        <button type="submit">حذف</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+{% endblock %}

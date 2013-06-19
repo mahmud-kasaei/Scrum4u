@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+{% block title %} ورود به سایت{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/bootstrap.min.css') }}" rel="stylesheet">
+    {#<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/bootstrap-responsive.css') }}" rel="stylesheet">
+    {#<link href="assets/css/docs.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/docs.css') }}" rel="stylesheet">
+    {#<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/prettify.css') }}" rel="stylesheet">
+    {#<link href="assets/css/my_fonts.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/my_fonts.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/scrumassets/css/font.css')}}" rel="stylesheet">
+    {% endblock %}
+{% block body %}
+    <div style="text-align: center " class="hero-unit"><p class="tfont"><h1>اسکرامیان</h1> </p></div>
+    <div style="width: 25%;margin: 0 auto">
+        {{ block('fos_user_content') }}
+    </div>
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

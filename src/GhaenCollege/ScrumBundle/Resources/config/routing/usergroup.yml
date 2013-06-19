@@ -1,0 +1,31 @@
+user_group:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:UserGroup:index" }
+
+user_group_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:UserGroup:show" }
+
+user_group_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:UserGroup:new" }
+
+user_group_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:UserGroup:create" }
+    requirements: { _method: post }
+
+user_group_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:UserGroup:edit" }
+
+user_group_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:UserGroup:update" }
+    requirements: { _method: post|put }
+
+user_group_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:UserGroup:delete" }
+    requirements: { _method: post|delete }
+

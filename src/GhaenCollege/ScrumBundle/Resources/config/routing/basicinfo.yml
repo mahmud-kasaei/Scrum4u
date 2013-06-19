@@ -1,0 +1,30 @@
+basic_info:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:BasicInfo:index" }
+
+basic_info_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:BasicInfo:show" }
+
+basic_info_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:BasicInfo:new" }
+
+basic_info_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:BasicInfo:create" }
+    requirements: { _method: post }
+
+basic_info_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:BasicInfo:edit" }
+
+basic_info_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:BasicInfo:update" }
+    requirements: { _method: post|put }
+
+basic_info_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:BasicInfo:delete" }
+    requirements: { _method: post|delete }

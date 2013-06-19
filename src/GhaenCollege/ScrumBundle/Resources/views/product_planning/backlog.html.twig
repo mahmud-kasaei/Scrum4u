@@ -1,0 +1,114 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ asset('bundles/scrumassets/css/product_planning/backlog/style.css')}}" type="text/css" />
+{% endblock %}
+{% block container %}
+    <br/>
+    <div class="btn-toolbar">
+    <div style="margin-right: 50px" class="pull-right btn-group">
+        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+            افزودن
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="{{ path('backlog_new') }}">New</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+    </div>
+   <br/>
+<div id="drag">
+    <table class="tbl1">
+        <colgroup>
+            <col width="30"/>
+            <col width="100"/>
+            <col width="100"/>
+            <col width="100"/>
+            <col width="100"/>
+            <col width="100"/>
+        </colgroup>
+        <tbody>
+        <tr>
+            <th  class="mark"></th>
+            <th  class="mark">عنوان</th>
+            <th  class="mark">تخمین</th>
+            <th  class="mark">مسئول</th>
+            <th  class="mark">پروژه</th>
+            <th  class="mark">ویرایش</th>
+        </tr>
+        <tr class="rl">
+            <td class="rowhandler"><div class="drag row"></div></td>
+            <td class="cdark"></td>
+            <td></td>
+            <td><div class="drag blue">Drag</div></td>
+            <td></td>
+            <td class="cdark"></td>
+        </tr>
+        <tr class="rd">
+            <td class="rowhandler"><div class="drag row"></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="rl">
+            <td class="rowhandler"><div class="drag row"></div></td>
+            <td><div class="drag blue">and</div></td>
+            <td class="cdark"></td>
+            <td><div class="drag blue">drop</div></td>
+            <td class="cdark"></td>
+            <td><div class="drag blue">table</div></td>
+        </tr>
+        <tr class="rd">
+            <td class="rowhandler"><div class="drag row"></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="rl">
+            <td class="rowhandler"><div class="drag row"></div></td>
+            <td><div class="drag blue">rows</div></td>
+            <td class="cdark"></td>
+            <td><div class="drag blue">with</div></td>
+            <td class="cdark"></td>
+            <td><div class="drag blue">REDIPS</div></td>
+        </tr>
+        <tr class="rd">
+            <td class="rowhandler"><div class="drag row"></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="rl">
+            <td class="rowhandler"><div class="drag row"></div></td>
+            <td class="cdark"></td>
+            <td></td>
+            <td><div class="drag blue">lib</div></td>
+            <td></td>
+            <td class="cdark"></td>
+        </tr>
+        <tr>
+            <td colspan="6" class="mark"><span>Message line</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript" src="{{asset('bundles/scrumassets/js/task_board_js/redips-drag-min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('bundles/scrumassets/js/task_board_js/script.js')}}"></script>
+    <script type="text/javascript">
+        $(".subnav").addClass("hidden");
+        $("#sub-menu-blog").removeClass("hidden");
+        $(".mymain-nav").removeClass("active");
+        $("#menu-blog").addClass("active");
+    </script>
+{% endblock %}

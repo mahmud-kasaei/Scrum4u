@@ -1,0 +1,27 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block fos_user_content %}
+{% if error %}
+    <div  style="    margin: 0 auto ;background-color: #ffeeaa">{{ error|trans({}, 'FOSUserBundle','fa') }}</div>
+{% endif %}
+<form  action="{{ path("fos_user_security_check") }}" method="post">
+    <div  style="width: 100%;margin: 0 auto">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <div>
+    <label class="tfont" for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle','fa') }}</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+    </div>
+    <div>
+    <label class="tfont" for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle','fa') }}</label>
+    <input type="password" id="password" name="_password" required="required" />
+    </div>
+    <div>
+    <span class="tfont" for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle','fa') }}</span>
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    </div>
+        <div style="width: 10%; margin: 0 auto ;" >
+            <input  class="btn btn-success bfont" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle','fa') }}" />
+        </div>
+    </div>
+</form>
+    <a class="tfont" href="{{ path('fos_user_registration_register') }}">برای ثبت نام کلیک کنید</a>
+{% endblock fos_user_content %}

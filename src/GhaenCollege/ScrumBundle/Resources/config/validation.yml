@@ -1,0 +1,27 @@
+GhaenCollege\ScrumBundle\Entity\Project:
+    properties:
+        title:
+            - NotBlank:
+                message: "عنوان نمیتواند خالی باشد."
+        description:
+            - NotBlank:
+                message: "فیلد توضیحات نمی تواند خالی باشد."
+        createDate:
+            - NotBlank: ~
+#                message: "فیلد تاریخ ایجاد نمیتواند خالی باشد."
+        endDate:
+#            - NotBlank:
+#                message: "fffffffffffffffffffffff"
+            - Length:
+                min: 5
+                max: 10
+                minMessage: 'این فیلد نباید از 5 کاراکتر کمتر باشد'
+                maxMessage: 'این فیلد نباید از 10 کاراکتر بیشتر باشد'
+        startDate:
+            - NotBlank:
+                message: "فیلد تاریخ شروع نمی تواند خالی باشد."
+GhaenCollege\ScrumBundle\Entity\Backlog:
+    properties:
+        title:
+            - NotBlank:
+                message: "tttttttttttttttesssssssssssstttttttttttttt."

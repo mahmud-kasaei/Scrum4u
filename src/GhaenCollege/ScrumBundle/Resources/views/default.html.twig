@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <title>نرم افزار اسکرام، ابزارهای اسکرام|؟؟؟؟؟؟؟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    {#<link href="assets/css/bootstrap.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/bootstrap.min.css') }}" rel="stylesheet">
+
+    {#<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/bootstrap-responsive.css') }}" rel="stylesheet">
+    {#<link href="assets/css/docs.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/docs.css') }}" rel="stylesheet">
+    {#<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/prettify.css') }}" rel="stylesheet">
+    {#<link href="assets/css/my_fonts.css" rel="stylesheet">#}
+    <link href="{{ asset('bundles/scrumassets/css/bcss/my_fonts.css') }}" rel="stylesheet">
+    <style type="text/css">
+        p{
+            font-family: nassim;
+        }
+        h3{
+            font-family:koodak;
+        }
+        .tfont
+        {
+            font-family: koodak;
+        }
+        .bfont
+        {
+            font-family: yekan;
+        }
+    </style>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="{{asset('bundles/scrumassets/js/html5shiv.js') }}"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <script src="assets/js/holder/holder.js" type="text/javascript"></script>
+    <script src="{{asset('bundles/scrumassets/js/holder/holder.js') }}" type="text/javascript"></script>
+</head>
+<body dir="rtl">
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right bfont">
+
+                    <li class="">
+                        <a href="{{ path('fos_user_registration_register') }}">ثبت نام</a>
+                    </li>
+                    <li class="">
+                        <a data-toggle="modal" role="button" href="{{ path('fos_user_security_login') }}">ورود</a>
+                    </li>
+                    <li class="">
+                        <a href="./javascript.html">تماس با ما</a>
+                    </li>
+                    <li class="">
+                        <a href="{{ path('_home_page') }}">شروع کار با اسکرام</a>
+                    </li>
+                    <li class="active">
+                        <a class=""  href="./index.html">خانه</a>
+                    </li>
+                </ul>
+            </div>
+            <!--<a class="brand pull-left" style="clear:left" href="./index.html">Bootstrap</a>-->
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <!-- Main Area -->
+        <div id="main_area">
+            <!-- Slider -->
+            <div class="row">
+                <div class="span12" id="slider">
+                    <!-- Top part of the slider -->
+                    <div class="row">
+                        <div class="span8" id="carousel-bounding-box">
+                            <div id="myCarousel" class="carousel slide">
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="item" data-slide-number="1"><img src="{{asset('bundles/scrumassets/img/Sprintplanning.jpg') }}" /></div>
+                                    <div class="active item" data-slide-number="0"><img data-src="holder.js/770x300" /></div>
+                                    <div class="item" data-slide-number="2"><img data-src="holder.js/770x300" /></div>
+                                    <div class="item" data-slide-number="3"><img data-src="holder.js/770x300" /></div>
+                                    <div class="item" data-slide-number="4"><img data-src="holder.js/770x300" /></div>
+                                    <div class="item" data-slide-number="5"><img data-src="holder.js/770x300" /></div>
+                                </div>
+                                <!-- Carousel nav -->
+                                <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+                                <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+                            </div>
+                        </div>
+                        <div class="span4" id="carousel-text"></div>
+
+                        <div style="display: none;" id="slide-content">
+                            <div id="slide-content-0">
+                                <h2>Slider One</h2>
+                                <p>Lorem Ipsum Dolor</p>
+                                <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+                            </div>
+                            <div id="slide-content-1">
+                                <h2>Slider Two</h2>
+                                <p>Lorem Ipsum Dolor</p>
+                                <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+                            </div>
+                            <div id="slide-content-2">
+                                <h2>Slider Three</h2>
+                                <p>Lorem Ipsum Dolor</p>
+                                <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+                            </div>
+                            <div id="slide-content-3">
+                                <h2>Slider Four</h2>
+                                <p>Lorem Ipsum Dolor</p>
+                                <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+                            </div>
+                            <div id="slide-content-4">
+                                <h2>Slider Five</h2>
+                                <p>Lorem Ipsum Dolor</p>
+                                <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+                            </div>
+                            <div id="slide-content-5">
+                                <h2>Slider Six</h2>
+                                <p>Lorem Ipsum Dolor</p>
+                                <p class="sub-text">October 24 2012 - <a href="#">Read more</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!--/Slider-->
+
+            <div class="row hidden-phone" id="slider-thumbs">
+                <div class="span12">
+                    <!-- Bottom switcher of slider -->
+                    <ul class="thumbnails">
+                        <li class="span2">
+                            <a class="thumbnail" id="carousel-selector-0">
+                                <img data-src="holder.js/170x100" />
+                            </a>
+                        </li>
+                        <li class="span2">
+                            <a class="thumbnail" id="carousel-selector-1">
+                                <img data-src="holder.js/170x100" />
+                            </a>
+                        </li>
+                        <li class="span2">
+                            <a class="thumbnail" id="carousel-selector-2">
+                                <img data-src="holder.js/170x100" />
+                            </a>
+                        </li>
+                        <li class="span2">
+                            <a class="thumbnail" id="carousel-selector-3">
+                                <img data-src="holder.js/170x100" />
+                            </a>
+                        </li>
+                        <li class="span2">
+                            <a class="thumbnail" id="carousel-selector-4">
+                                <img data-src="holder.js/170x100" />
+                            </a>
+                        </li>
+                        <li class="span2">
+                            <a class="thumbnail" id="carousel-selector-5">
+                                <img data-src="holder.js/170x100" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="thumbnail">
+                        <div class="caption text-center">
+                        <h3>مرور سیستم</h3>
+                    </div>
+                        <img src="assets/img/versionone-90-sec-video-preview.jpg">
+                    </div>
+                </div>
+                <div class="span6 text-right bfont">
+                    <div class="thumbnail">
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <ul class="unstyled">
+                                <li>
+                                    <a href="#">طرح ریزی محصول</a>
+                                </li>
+                                <li>
+                                    <a href="#">طرح ریزی نسخه</a>
+                                </li>
+                                <li>
+                                    <a href="#"> برنامه ریزی اسپرینت </a>
+                                </li>
+                                <li>
+                                    <a href="#">  مدیریت روند پروژه</a>
+                                </li>
+                                <li>
+                                    <a href="#"> انواع گزارش و آنالیز </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="span6">
+                         <ul class="unstyled">
+                            <li>
+                                <a  href="#"> مدیریت تست</a>
+                                <span class="icon-adjust"></span>
+                            </li>
+                            <li>
+                                <a href="#">مدیریت ایده ها</a>
+                            </li>
+                            <li>
+                                <a href="#">نقشه تکامل پروژه</a>
+                            </li>
+                            <li>
+                                <a href="#">ابزارهای تبادل اطلاعات</a>
+                            </li>
+                        </ul>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row-fluid" style="margin-top: 10px">
+        <ul class="thumbnails">
+            <li class="span4">
+                <div class="thumbnail">
+                    <div class="caption text-right">
+                        <h3>منابع مفید</h3>
+                        <p style="font-family: nassim">اسکرام (Scurm) یک متدولوژی افزایشی (Incremental) برای مدیریت پروژه های نرم افزاری است و از رده متدولوژی های Agile محسوب می شود. این متدولوژی اولین بار در ژاپن اختراع شد و بعد ها در سال ۱۹۹۱ توسط Stahl و Degrace توسعه داده شد. درسال ۱۹۹۵ این متدولوژی توسط Ken Schwober و Jeff Stherland بعنوان یک متدولوژی رسمی برای تولید نرم افزار بکار گرفته شد.</p>
+                        <p class="text-center"><a  href="#" class="btn btn-large bfont">منابع بیشتر</a></p>
+                    </div>
+                </div>
+            </li>
+            <li class="span8 thumbnail text-right">
+                <div class="caption">
+                <h3 class="text-center">قابلیت های جدید</h3>
+            </div>
+                <div class="span11">
+                    <div class="span6">
+                        <img data-src="holder.js/300x200" alt="">
+                        <div class="caption">
+                            <p>
+                                .....
+                            </p>
+                        </div>
+                        </div>
+                    <div class="span6">
+                            <img data-src="holder.js/300x200" alt="">
+                            <div class="caption">
+                                <p>.....</p>
+                            </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+<div class="row-fluid show-grid">
+    <div class="span6">
+        <a style="margin: 20px; font-family: yekan" class="btn btn-large pull-left" href="javascript:;">ثبت نام</a>
+        <h3 >کاملا رایگان</h3>
+        <p style="font-family: nassim">مبتنی بر وب، کاربر پسند، مدیریت بک لاگ، مکالمه آسان و ...</p>
+    </div>
+    <div class="span6">
+        <h3 >اخبار ماهیانه...</h3>
+        <p style="font-family: nassim">اطلاعات اسکرام بصورت ماهیانه</p>
+        <a style="margin: 20px;" class="btn btn-large bfont" href="javascript:;">ثبت نام</a>
+    </div>
+</div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <ul class="footer-links" style="font-family: nassim">
+            <li><a href="javascript:;">خانه</a></li>
+            <li class="muted">&middot;</li>
+            <li><a href="javascript:;">درباره ما</a></li>
+            <li class="muted">&middot;</li>
+            <li><a href="javascript:;">تماس با ما</a></li>
+            <li class="muted">&middot;</li>
+            <li><a href="javascript:;">نقشه سایت</a></li>
+        </ul>
+    </div>
+
+</footer>
+
+<!--[Modals]-->
+<div class="modal hide" id="loginModal">
+    <div class="modal-header">
+        <button type="button" class="close pull-left" data-dismiss="modal" aria-hidden="true">×</button>
+        <p class="text-right">در صورت داشتن حساب از تب ورود و در غیر این صورت از تب ایجاد حساب استفاده کنید.</p>
+    </div>
+    <div class="modal-body">
+        <div class="well">
+            <ul class="nav nav-tabs bfont">
+                <li class="active pull-right"><a href="#login" data-toggle="tab">ورود</a></li>
+                <li class="pull-right"><a href="#create" data-toggle="tab">ایجاد حساب</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane active in" id="login">
+                    <form class="form-horizontal" action='' method="POST">
+                        <fieldset>
+                            <div id="legend">
+                                <legend class="tfont">ورود</legend>
+                            </div>
+                            <div class="tfont control-group">
+                                <!-- Username -->
+                                <label for="username">نام کاربری</label>
+                                <div class="controls">
+                                    <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="tfont control-group">
+                                <!-- Password-->
+                                <label class="" for="password">کامه عبور</label>
+                                <div class="controls">
+                                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <!-- Button -->
+                                <div class="controls">
+                                    <button class="btn btn-success bfont">ورود</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="tab-pane fade tfont" id="create">
+                    <form id="tab">
+                        <label>نام کاربری</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>نام</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>نام خانوادگی</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>کلمه عبور</label>
+                        <input type="text" value="" class="input-xlarge">
+                        <label>آدرس</label>
+                        <textarea value="Smith" rows="3" class="input-xlarge">
+                        </textarea>
+                        <div>
+                            <button class="btn btn-primary bfont">ایجاد حساب</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<ened modal>-->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap-transition.js"></script>
+<script src="assets/js/bootstrap-alert.js"></script>
+<script src="{{asset('bundles/scrumassets/js/bootstrap-modal.js')}}"></script>
+<script src="assets/js/bootstrap-dropdown.js"></script>
+<script src="assets/js/bootstrap-scrollspy.js"></script>
+<script src="assets/js/bootstrap-tab.js"></script>
+<script src="assets/js/bootstrap-tooltip.js"></script>
+<script src="assets/js/bootstrap-popover.js"></script>
+<script src="assets/js/bootstrap-button.js"></script>
+<script src="assets/js/bootstrap-collapse.js"></script>
+<script src="{{asset('bundles/scrumassets/js/bootstrap-carousel.js')}}"></script>
+<script src="assets/js/bootstrap-typeahead.js"></script>
+<script src="assets/js/bootstrap-affix.js"></script>
+
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+<script src="assets/js/application.js"></script>
+
+<script>
+    jQuery(document).ready(function($) {
+
+        $('#myCarousel').carousel({
+            interval: 5000
+        });
+
+        $('#carousel-text').html($('#slide-content-0').html());
+
+        //Handles the carousel thumbnails
+        $('[id^=carousel-selector-]').click( function(){
+            var id_selector = $(this).attr("id");
+            var id = id_selector.substr(id_selector.length -1);
+            var id = parseInt(id);
+            $('#myCarousel').carousel(id);
+        });
+
+
+        // When the carousel slides, auto update the text
+        $('#myCarousel').on('slid', function (e) {
+            var id = $('.item.active').data('slide-number');
+            $('#carousel-text').html($('#slide-content-'+id).html());
+        });
+
+
+    });
+</script>
+
+</body>
+</html>

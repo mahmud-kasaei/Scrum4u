@@ -1,0 +1,41 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+
+{% block stylesheet -%}{% endblock %}
+{% block container -%}
+    <h1>ایجاد قابلیت</h1>
+
+    <form action="{{ path('epic_create') }}" method="post" {{ form_enctype(form) }} class="">
+        {#{{ form_widget(form) }}#}
+        {#<input type="hidden" name="_method" value="PUT" />#}
+        {{ form_errors(form) }}
+        {{  form_widget(form._token) }}
+        <div class="row-fluid">
+            {#<div class="span6">#}
+                <label>
+                    {{"epic.description"|trans({},"epic","fr") }}
+                </label>
+                {{ form_widget(form.description) }}
+
+            {#</div>#}
+
+            {#<div class="span6">#}
+                {{ form_widget(form.title) }}
+
+                <label>
+                    {{"epic.title"|trans({},"epic","fr") }}
+                </label>
+            {#</div>#}
+        </div>
+        <p>
+            <button type="submit">ایجاد</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('epic') }}">
+            برگشت به لیست
+        </a>
+    </li>
+</ul>
+{% endblock %}

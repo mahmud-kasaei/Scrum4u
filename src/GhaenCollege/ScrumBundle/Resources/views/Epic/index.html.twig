@@ -1,0 +1,64 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+
+{% block stylesheet -%}
+    {{ parent() }}
+    <style>
+        .centerclass{text-align: center}
+    </style>
+{% endblock %}
+
+{% block container -%}
+    <h1>لیست قابلیت های کلی</h1>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="box">
+                <div class="box-container-toggle">
+                    <div class="box-content">
+                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered bootstrap-datatable" id="datatable">
+                            <thead>
+                            <tr class="">
+                                <th class="centerclass">کد قابلیت کلی</th>
+                                <th class="centerclass">عنوان</th>
+                                <th class="centerclass">توضیحات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr class="">
+                                    <td class=""><a href="{{ path('epic_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                    <td>{{ entity.title }}</td>
+                                    <td>{{ entity.description }}</td>
+                                    <td>
+                                        <a class="btn btn-success" href="{{ path('epic_show', { 'id': entity.id }) }}">مشاهده  <i class="icon-zoom-in icon-white"></i></a>
+                                        <a class="btn btn-info" href="{{ path('epic_edit', { 'id': entity.id }) }}">ویرایش      <i class="icon-edit icon-white"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {#<table class="records_list">#}
+        {#<thead>#}
+        {#<tr>#}
+            {#<th>کد</th>#}
+            {#<th>عنوان</th>#}
+            {#<th>توضیحات</th>#}
+            {#<th>عملیات</th>#}
+        {#</tr>#}
+        {#</thead>#}
+        {##}
+    {#</table>#}
+
+    <ul>
+    <li>
+        <a href="{{ path('epic_new') }}">
+            ایجاد قابلیت کلی جدید
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

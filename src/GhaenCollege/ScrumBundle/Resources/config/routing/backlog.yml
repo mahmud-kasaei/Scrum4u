@@ -1,0 +1,30 @@
+backlog:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:Backlog:index" }
+
+backlog_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:Backlog:show" }
+
+backlog_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:Backlog:new" }
+
+backlog_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:Backlog:create" }
+    requirements: { _method: post }
+
+backlog_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:Backlog:edit" }
+
+backlog_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:Backlog:update" }
+    requirements: { _method: post|put }
+
+backlog_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:Backlog:delete" }
+    requirements: { _method: post|delete }

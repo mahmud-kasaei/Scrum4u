@@ -1,0 +1,157 @@
+<div class="row-fluid pull-right">
+    <div class="">
+        <a href="#myModal" role="button" class="btn btn-info" data-toggle="modal">انتخاب پروژه</a>
+        <ul class="nav" role="navigation">
+            <li class="dropdown pull-right">
+                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">انتخاب پروژه<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://google.com">پروژه1</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#anotherAction">پروژه2</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">پروژه 3</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">پروژه 4</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="modal hide fade" id=myModal>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>انتخاب پروژه</h3>
+            </div>
+            <div class="modal-body">
+                <div class="well pull-right" style="width:100%; padding: 8px 0;">
+                    <div style="overflow-y:scroll ; overflow-x: hidden; height: 500px;">
+                        <ul class="nav nav-list">
+                            <li><label class="tree-toggler nav-header">پروژه 1</label>
+                                <ul class="nav nav-list tree">
+                                    <li><a href="#">نسخه 1</a></li>
+                                    <li><a href="#">نسخه 2</a></li>
+                                    <li><label class="tree-toggler nav-header">Header 1.1</label>
+                                        <ul class="nav nav-list tree">
+                                            <li><a href="#">Link</a></li>
+                                            <li><a href="#">Link</a></li>
+                                            <li><label class="tree-toggler nav-header">Header 1.1.1</label>
+                                                <ul class="nav nav-list tree">
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li><label class="tree-toggler nav-header">پروژه 2</label>
+                                <ul class="nav nav-list tree">
+                                    <li><a href="#">نسخه 1</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><label class="tree-toggler nav-header">نسخه 1.1</label>
+                                        <ul class="nav nav-list tree">
+                                            <li><a href="#">Link</a></li>
+                                            <li><a href="#">Link</a></li>
+                                            <li><label class="tree-toggler nav-header">Header 2.1.1</label>
+                                                <ul class="nav nav-list tree">
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><label class="tree-toggler nav-header">Header 2.2</label>
+                                        <ul class="nav nav-list tree">
+                                            <li><a href="#">Link</a></li>
+                                            <li><a href="#">Link</a></li>
+                                            <li><label class="tree-toggler nav-header">Header 2.2.1</label>
+                                                <ul class="nav nav-list tree">
+                                                    <li><a href="#">Link</a></li>
+                                                    <li><a href="#">Link</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('.nav .nav-list').hide();
+                        $('label.tree-toggler').click(function () {
+                            $(this).parent().children('ul.tree').toggle(300);
+                        });
+                    });
+                </script>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">خروج</button>
+                <a href="#" class="btn btn-primary">اعمال تغییرات</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="bs-docs-example">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>موضوع</th>
+                <th>Related to</th>
+                <th>تار?خ ا?جاد</th>
+                <th>نام ارسال کننده</th>
+            </tr>
+            </thead>
+            <tbody class="">
+            <tr class="success">
+                <td>XXXX</td>
+                <td>WWWWWW</td>
+                <td>ZZZZZZZZZ</td>
+                <td>
+                    <ul class="nav" role="navigation">
+                        <li class="dropdown pull-right">
+                            <a id="drop1" href="javascript:;" role="button" class="dropdown-toggle" data-toggle="dropdown">خدف <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">حذف</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">و?را?ش</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr class="warning">
+                <td>
+                    <ul class="nav" role="navigation">
+                        <li class="dropdown pull-right">
+                            <a id="drop1" href="javascript:;" role="button" class="dropdown-toggle" data-toggle="dropdown">خدف <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">حذف</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">و?را?ش</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>بسته شدن اسپر?نت</td>
+                <td>نرم افزار مال? نشد</td>
+                <td>نشخه 2 نرم افزار توووپپپ بشته شد</td>
+            </tr>
+            <tr class="info">
+                <td>
+                    <ul class="nav" role="navigation">
+                        <li class="dropdown pull-right">
+                            <a id="drop1" href="javascript:;" role="button" class="dropdown-toggle" data-toggle="dropdown">خدف <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">حذف</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:;">و?را?ش</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>بسته شدن بک لاگ</td>
+                <td>خ?ل? سخت بود</td>
+                <td>بک لاگ ا?کس ?سته شد</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="{{asset('bundles/scrumassets/js/bootstrap-dropdown.js') }}"></script>
+    <script src="{{asset('bundles/scrumassets/js/bootstrap-modal.js') }}"></script>
+</div>

@@ -1,0 +1,149 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ asset('bundles/scrumassets/css/task_board_css/style.css')}}" type="text/css" />
+{% endblock %}
+{% block container %}
+    <a id="loadlink" href="{{ path('_story_AJAX') }}"></a>
+<div id="drag">
+    <form id="myForm" action="{{ path('_story_AJAX') }}">
+<table class="tfont" id="table1">
+    <colgroup>
+        <col width="170"/>
+        <col width="50"/>
+        <col width="170"/>
+        <col width="170"/>
+        <col width="170"/>
+        <col width="170"/>
+        <col width="170"/>
+    </colgroup>
+    <tr>
+        <td class="mark">سایر داستان ها</td>
+        <td class="mark blank"></td>
+        <td class="mark dark single" title="Single content cell">در حال انجام</td>
+        <td class="mark dark single">در حال تست</td>
+        <td class="mark dark single">انجام شده</td>
+        <td class="mark dark single">تحویل شده</td>
+    </tr>
+    <tr>
+        <td class="dark">
+        {% for entity in entities %}
+            {% if entity.status==null %}
+
+            <div id="{{ entity.id }}" class="drag2 orange climit1-2">
+                {{ entity.title }}
+                <a href="{{ path('my_task_new',{'story_id':entity.id}) }}">
+                    افزودن وظیفه
+                </a>
+                {% for t in entity.tasks %}
+                    <div id="{{ t.id }}" class="smalldrag drag orange climit1-2">{{ t.title }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endfor %}
+       </td>
+        <td class="mark blank"></td>
+        <td>
+            {% for entity in entities %}
+            {% if entity.status %}
+                {% if entity.status.title=="در حال انجام" %}
+                    <div id="{{ entity.id }}" class="drag orange climit1-2">{{ entity.title }}<br/>
+                        <a href="{{ path('my_task_new',{'story_id':entity.id}) }}">
+                            افزودن وظیفه
+                        </a>
+                        {% for t in entity.tasks %}
+                            <div id="{{ t.id }}" class="smalldrag orange climit1-2">{{ t.title }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for entity in entities %}
+            {% if entity.status %}
+                {% if entity.status.title=="در حال تست"%}
+                    <div id="{{ entity.id }}" class="drag orange climit1-2">{{ entity.title }}</div>
+                {% endif %}
+            {% endif %}
+            {% endfor %}
+        </td>
+        <td class="single">
+            {% for entity in entities %}
+            {% if entity.status %}
+                {% if entity.status.title=="انجام شده"%}
+                    <div id="{{ entity.id }}" class="drag orange climit1-2">{{ entity.title }}</div>
+                {% endif %}
+            {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for entity in entities %}
+            {% if entity.status %}
+                {% if entity.status.title=="تحویل شده"%}
+                    <div id="{{ entity.id }}" class="drag green climit1-2">{{ entity.title }}</div>
+                {% endif %}
+            {% endif %}
+            {% endfor %}
+        </td>
+    </tr>
+    <tr>
+        <!-- define green clone element (2 cloned elements + last element) -->
+        <td class="dark"></td>
+        <td class="mark blank"></td>
+        <td></td>
+        <td class="single"></td>
+        <td></td>
+        <td class="single"></td>
+    </tr>
+    <tr>
+        <td class="dark"></td>
+        <td class="mark blank"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <!-- define orange clone element (2 cloned elements + last element) -->
+        <td class="dark"></td>
+        <td class="mark blank"></td>
+        <td></td>
+        <td class="single"></td>
+        <td></td>
+        <td class="single"></td>
+    </tr>
+    <tr>
+        <td class="dark"></td>
+        <td class="mark blank"></td>
+        <td></td>
+        <td></td>
+        <td class="single"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="dark"></td>
+        <td class="mark blank"></td>
+        <td class="single" title="Single content cell"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr><td id="message" class="mark"></td></tr>
+</table>
+    </form>
+    <div id="resultContainer"></div>
+</div>
+    {% block script %}
+        <script type="text/javascript" src="{{asset('bundles/scrumassets/js/task_board_js/redips-drag-min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/scrumassets/js/task_board_js/script.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/scrumassets/js/task_board_js/AJAXscript.js')}}"></script>
+    {% endblock %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".subnav").addClass("hidden");
+        $("#sub-menu-reports").removeClass("hidden");
+        $(".mymain-nav").removeClass("active");
+        $("#menu-reports").addClass("active");
+    });
+</script>
+{% endblock %}

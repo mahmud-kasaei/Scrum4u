@@ -1,0 +1,63 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+
+{% block stylesheet -%}
+
+{% endblock %}
+{% block container -%}
+    <h1>لیست اسپرینت</h1>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="box">
+                <div class="box-container-toggle">
+                    <div class="box-content">
+                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered bootstrap-datatable" id="datatable">
+                            <thead>
+                                <tr>
+                                    <th>کد</th>
+                                    <th>هدف اسپرینت</th>
+                                    <th>تاریخ ارائه دمو</th>
+                                    <th>عنوان</th>
+                                    <th>زمان ملاقات اعضای اسکرام</th>
+                                    <th>مکان ملاقات اعضای اسکرام</th>
+                                    <th>تاریخ ایجاد</th>
+                                    <th>تاریخ شروع</th>
+                                    <th>تاریخ پایان</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr>
+                                    <td><a href="{{ path('sprint_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                    <td>{{ entity.goal }}</td>
+                                    <td>{{ entity.presentationDemoDate }}</td>
+                                    <td>{{ entity.title }}</td>
+                                    <td>{{ entity.scrumMeetingTime }}</td>
+                                    <td>{{ entity.scrumMeetingPlace }}</td>
+                                    <td>{{ entity.createDate }}</td>
+                                    <td>{{ entity.startDate }}</td>
+                                    <td>{{ entity.endDate }}</td>
+                                    <td>
+                                        <a class="btn btn-success" href="{{ path('sprint_show', { 'id': entity.id }) }}">مشاهده  <i class="icon-zoom-in icon-white"></i></a>
+                                        <a class="btn btn-info" href="{{ path('sprint_edit', { 'id': entity.id }) }}">ویرایش      <i class="icon-edit icon-white"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        <ul>
+        <li>
+            <a href="{{ path('sprint_new') }}">
+                ایجاد اسپرینت جدید
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

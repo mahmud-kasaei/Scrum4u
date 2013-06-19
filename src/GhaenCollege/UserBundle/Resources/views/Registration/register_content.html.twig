@@ -1,0 +1,44 @@
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {#{{ form_widget(form) }}#}
+    {{ form_errors(form) }}
+    {{  form_widget(form._token) }}
+    <label>
+        {{ 'form.Firstname'|trans({}, 'FOSUserBundle') }}
+    </label>
+    {{ form_widget(form.firstname) }}
+    <label>
+        {{ 'form.Lastname'|trans({}, 'FOSUserBundle') }}
+    </label>
+    {{ form_widget(form.lastname) }}
+
+    <label>
+        {{ 'form.username'|trans({}, 'FOSUserBundle') }}
+    </label>
+    {{ form_widget(form.username) }}
+
+    <label>
+        {{ 'form.email'|trans({}, 'FOSUserBundle') }}
+    </label>
+    {{ form_widget(form.email) }}
+
+    {{ form_widget(form.plainPassword) }}
+
+    {{ form_widget(form.firstname) }}
+
+
+    <label>
+        {{ 'form.UserGroupsName'|trans({}, 'FOSUserBundle') }}
+    </label>
+
+    {{ form_widget(form.usergroups) }}
+
+    <label>
+        {{ 'form.photoUpload'|trans({}, 'FOSUserBundle') }}
+    </label>
+    {{ form_errors(form.file) }}
+
+    {{ form_widget(form.file) }}
+    <div>
+        <input class="btn btn-success bfont" type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+    </div>
+</form>

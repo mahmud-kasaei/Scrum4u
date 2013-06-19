@@ -1,0 +1,88 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+    {% block stylesheet %} <style>.lblheight{height: 35px}
+    .submit_footer{clear: both;padding-right: 40%}
+    </style>  {% endblock %}
+{% block container -%}
+    <fieldset>
+        <legend>ایجاد داستان</legend>
+    <form class="tfont" action="{{ path('backlog_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+        {{  form_widget(form._token) }}
+        <div class="span4">
+            {{ form_widget(form.builder) }}
+            {{ form_widget(form.responsible) }}
+            {{ form_widget(form.status) }}
+            {{ form_widget(form.sprint) }}
+            {{ form_widget(form.description) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"backlog.Builder"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Responsible"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Status"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Sprint"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Description"|trans({},"backlog","fr") }}
+            </label>
+        </div>
+        <div class="span4">
+            {{ form_widget(form.title) }}
+            {{ form_widget(form.importance) }}
+            {{ form_widget(form.epic) }}
+            {{ form_widget(form.estimate) }}
+            {{ form_widget(form.howItsDemo) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"backlog.Title"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Importance"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Epic"|trans({},"backlog","fr") }}
+            </label class="lblheight">
+            <label class="lblheight">
+                {{"backlog.Estimate"|trans({},"backlog","fr") }}
+            </label class="lblheight">
+            <label>
+                {{"backlog.Howitsdemo"|trans({},"backlog","fr") }}
+            </label>
+        </div>
+
+        {##}
+        {#<label>#}
+            {#{{"backlog.Realtime"|trans({},"backlog","fr") }}#}
+        {#</label>#}
+        {#{{ form_widget(form.realtime) }}#}
+        {#<label>#}
+            {#{{"backlog.Createdate"|trans({},"backlog","fr") }}#}
+        {#</label>#}
+            {#{{ form_widget(form.createDate) }}#}
+        {#<label>#}
+            {#{{"backlog.Startdate"|trans({},"backlog","fr") }}#}
+        {#</label>#}
+        {#{{ form_widget(form.startDate) }}#}
+        {#<label>#}
+            {#{{"backlog.Enddate"|trans({},"backlog","fr") }}#}
+        {#</label>#}
+            {#{{ form_widget(form.endDate) }}#}
+        {#<label>#}
+            {#{{"backlog.Project"|trans({},"backlog","fr") }}#}
+        {#</label>#}
+        {#{{ form_widget(form.project) }}#}
+        <div class="submit_footer">
+                <button class="btn btn-success bfont" type="submit">ایجاد</button>
+            <a class="btn bfont" href="{{ path('backlog') }}">
+                بازگشت به لیست        </a>
+        </div>
+    </form>
+    </fieldset>
+{% endblock %}

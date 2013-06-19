@@ -1,0 +1,13 @@
+parameters:
+#    ghaen_college_scrum.example.class: GhaenCollege\ScrumBundle\Example
+
+services:
+#    ghaen_college_scrum.example:
+#        class: %ghaen_college_scrum.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    ghaencollege_user.registration.form.type:
+        class: GhaenCollege\ScrumBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: ghaencollege_user_registration }

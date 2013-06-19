@@ -1,0 +1,11 @@
+project.Description: توضیح پروژه
+project.Title: عنوان پروژه
+project.Begindate:  تاریخ آغاز پروژه
+project.Enddate: تاریخ پایان پروژه
+project.Schedule: زمانبندی
+project.Parent: پروژه پدر
+project.Createdate :  تاریخ ایجادپروژه
+project.Status : وضعیت
+project.Builder : سازنده
+project.Productowner : مالک محصول
+project.Startdate: تاریخ شروع پروژه

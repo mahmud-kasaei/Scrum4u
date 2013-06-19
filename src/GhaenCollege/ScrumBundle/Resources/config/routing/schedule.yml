@@ -1,0 +1,30 @@
+schedule:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:Schedule:index" }
+
+schedule_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:Schedule:show" }
+
+schedule_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:Schedule:new" }
+
+schedule_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:Schedule:create" }
+    requirements: { _method: post }
+
+schedule_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:Schedule:edit" }
+
+schedule_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:Schedule:update" }
+    requirements: { _method: post|put }
+
+schedule_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:Schedule:delete" }
+    requirements: { _method: post|delete }

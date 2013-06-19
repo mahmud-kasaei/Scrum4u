@@ -1,0 +1,55 @@
+ghaen_college_scrum_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: GhaenCollegeScrumBundle:Default:index }
+
+_story_AJAX:
+    pattern:  /storyajax
+    defaults: { _controller: GhaenCollegeScrumBundle:Default:story_AJAX }
+
+ghaen_college_scrum_homepage:
+    pattern:  /
+    defaults: { _controller: GhaenCollegeScrumBundle:Default:admin_index }
+
+_gust:
+    pattern:  /
+    defaults: { _controller: GhaenCollegeScrumBundle::index }
+
+_product_planning:
+    pattern:  /product_planning
+    defaults: { _controller: GhaenCollegeScrumBundle:Default:product_planning }
+
+_test_graph:
+  pattern:  /test_graph
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:test_graph }
+
+_work_tools:
+  pattern:  /work_tools
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:work_tools }
+
+_story_board:
+  pattern:  story_board
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:story_board }
+
+_task_board:
+  pattern:  /task_board
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:task_board }
+
+_backlog:
+  pattern:  /backlogdemo
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:backlog }
+
+_subscriptions:
+  pattern:  /subscriptions
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:subscriptions }
+
+_inbox:
+  pattern:  /inbox
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:inbox }
+
+_scrum:
+    pattern:  /
+    defaults: { _controller: GhaenCollegeScrumBundle:Default:scrum }
+
+_epics:
+  pattern:  /epics
+  defaults: { _controller: GhaenCollegeScrumBundle:Default:epics }

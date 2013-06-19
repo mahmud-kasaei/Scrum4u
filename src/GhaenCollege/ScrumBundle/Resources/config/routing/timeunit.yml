@@ -1,0 +1,30 @@
+time_unit:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:TimeUnit:index" }
+
+time_unit_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:TimeUnit:show" }
+
+time_unit_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:TimeUnit:new" }
+
+time_unit_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:TimeUnit:create" }
+    requirements: { _method: post }
+
+time_unit_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:TimeUnit:edit" }
+
+time_unit_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:TimeUnit:update" }
+    requirements: { _method: post|put }
+
+time_unit_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:TimeUnit:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'yekan';
+    src:url('../fonts/BYekan.eot') format('eot'),
+    url('../fonts/BYekan.woff') format('woff'),
+    url('../fonts/BYekan.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'elham';
+    src: url(../fonts/BElham.eot) format('eot'),
+    url('../fonts/BYekan.woff') format('woff'),
+    url(../fonts/BElham.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'nazanin';
+    src: url(../fonts/BNazanin.eot) format('eot'),
+    url('../fonts/BYekan.woff') format('woff'),
+    url('../fonts/BNazanin.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'nassim';
+    src: url(../fonts/znassim-regular.eot) format('eot'),
+    url('../fonts/znassim-regular.woff') format('woff'),
+    url('../fonts/znassim-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'koodak';
+    src: url(../fonts/BKoodakBold.eot) format('eot'),
+    url('../fonts/BKoodakBold.woff') format('woff'),
+    url('../fonts/BKoodakBold.ttf') format('truetype');
+}

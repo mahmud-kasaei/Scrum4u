@@ -1,0 +1,80 @@
+{% extends "GhaenCollegeScrumBundle:Parent:administration_menu.html.twig" %}
+   {% block stylesheet %} <style>.lblheight{height: 35px}
+       .submit_footer{clear: both;padding-right: 40%}
+   </style>  {% endblock %}
+{% block container -%}
+    {% block notification %}
+        {% if app.session.hasFlash('notice') %}
+            {{ app.session.flash('notice') }}
+        {% endif %}
+
+    {% endblock %}
+    <h2>ایجاد پروژه</h2>
+    <form action="{{ path('project_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+        {{  form_widget(form._token) }}
+        <div class="span4">
+            {{ form_widget(form.productOwner) }}
+            {{ form_widget(form.status) }}
+            {{ form_widget(form.description) }}
+            {{ form_errors(form.description) }}
+            {{ form_widget(form.createDate) }}
+            {{ form_errors(form.createDate) }}
+            {{ form_widget(form.endDate) }}
+            {{ form_errors(form.endDate) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"project.Productowner"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Status"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Description"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Createdate"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Enddate"|trans({},"project","fr") }}
+            </label>
+        </div>
+        <div class="span4">
+            {{ form_widget(form.title) }}
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.schedule) }}
+            {{ form_widget(form.parent) }}
+            {{ form_widget(form.startDate) }}
+            {{ form_errors(form.startDate) }}
+            {{ form_widget(form.builder) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"project.Title"|trans({},"project","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"project.Schedule"|trans({},"project","fr") }}
+            </label>
+            <label>
+                {{"project.Parent"|trans({},"project","fr") }}
+            </label>
+            <label>
+                {{"project.Startdate"|trans({},"project","fr") }}
+            </label>
+            <label>
+                {{"project.Builder"|trans({},"project","fr") }}
+            </label>
+        </div>
+
+        {#{{ form_widget(form) }}#}
+        <div  class="submit_footer">
+            <button class="btn btn-success" type="submit">ایجاد</button>
+            <a  class="btn bfont" href="{{ path('project') }}">
+                بازگشت به لیست پروژه ها
+            </a>
+        </div>
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+{% block stylesheet %}
+<style>
+    .centerclass{text-align: center}
+
+</style>
+{% endblock %}
+{% block container -%}
+    <h1>لیست داستان ها</h1>
+
+    <div class="row-fluid">
+    <!-- Portlet Set -->
+    <div class="span12">
+    <!-- Portlet: Box -->
+    <div class="box">
+    {#<h4 class="box-header round-top"><i class="icon-list"></i> Data Table <small class="hidden-phone">Fully repsonsive make the screen small!</small>#}
+        {#<a class="box-btn" title="close"><i class="icon-remove"></i></a><!-- Can be removed if not wanted -->#}
+        {#<a class="box-btn" title="toggle"><i class="icon-minus"></i></a><!-- Can be removed if not wanted -->#}
+        {#<a class="box-btn" title="config" data-toggle="modal" href="tables.html#box-config-modal"><i class="icon-cog"></i></a><!-- Can be removed if not wanted -->#}
+    {#</h4>#}
+    <div class="box-container-toggle">
+    <div class="box-content">
+    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered bootstrap-datatable" id="datatable">
+    <thead>
+    <tr>
+        <th class="centerclass">کد داستان</th>
+        <th  class="centerclass">عنوان</th>
+        <th class="centerclass hidden-phone">اهمیت</th>
+        <th class="hidden-phone centerclass">تخمین</th>
+        <th class="hidden-phone centerclass">زمان واقعی</th>
+        <th class="hidden-phone centerclass">وضعیت</th>
+        <th>عملیات</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('backlog_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.title }}</td>
+            {#<td>{{ entity.description }}</td>#}
+            <td>{{ entity.importance }}</td>
+            <td>{{ entity.estimate }}</td>
+            <td>{{ entity.realtime }}</td>
+            <td>{{ entity.status }}</td>
+            {#<td>{{ entity.howItsDemo }}</td>#}
+            {#<td>{{ entity.createDate }}</td>#}
+            {#<td>{{ entity.startDate }}</td>#}
+            {#<td>{{ entity.endDate }}</td>#}
+            <td>
+                        <a class="btn btn-success" href="{{ path('backlog_show', { 'id': entity.id }) }}">مشاهده  <i class="icon-zoom-in icon-white"></i></a>
+                        <a class="btn btn-info" href="{{ path('backlog_edit', { 'id': entity.id }) }}">ویرایش      <i class="icon-edit icon-white"></i></a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div><!--/span-->
+    </div><!--/row-->
+        <ul>
+            <li>
+                <a class="btn btn-primary" href="{{ path('backlog_new') }}">
+                    ایجاد بک لاگ جدید
+                </a>
+            </li>
+        </ul>
+    {% endblock %}

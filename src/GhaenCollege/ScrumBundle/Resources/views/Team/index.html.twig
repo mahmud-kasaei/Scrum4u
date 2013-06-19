@@ -1,0 +1,59 @@
+{% extends "GhaenCollegeScrumBundle:Parent:administration_menu.html.twig" %}
+{% block container -%}
+    <h1>لیست تیم ها</h1>
+        <div class="row-fluid">
+        {% for entity in entities %}
+            {% if entity.getSystemAdmin().getUsername() == app.security.getToken().getUser().getUsername() %}
+            <div class="box span4">
+                <!-- id=box-x is used for the position storing of the boxes -->
+                <h4 class="box-header round-all"><i class="icon-globe"></i> {{ entity.title }} <small class="hidden-phone"></small>
+                    <a title="close" class="box-btn"><i class="icon-remove"></i></a><!-- Can be removed if not wanted -->
+                    <a title="toggle" class="box-btn"><i class="icon-plus"></i></a><!-- Can be removed if not wanted -->
+                    <a href="{{ path('team_edit', { 'id': entity.id }) }}"><i title="Edit" class="icon-pencil"></i> ویرایش</a>
+                    <a href="{{ path('team_show', { 'id': entity.id }) }}"><i title="Delete" class="icon-search"></i>مشاهده</a>
+                    <a title="config" class="box-btn" href="#box-config-modal" data-toggle="modal"><i class="icon-cog"></i></a><!-- Can be removed if not wanted -->
+                </h4>
+                <ul class="dashboard-member-activity">
+                    {% for m in entity.members %}
+                        <li>
+                            <a href="index.html#">
+                                <img class="dashboard-member-activity-avatar" src="{{ asset('bundles/scrumassets/users/photoes/') }}{{m.id }}.jpg">
+                                <span class="blue"> نام کاربری :<strong>{{ m.getUsername() }}</strong></span></a>
+                            <div class="post-toolbar">
+                                <a href="index.html#"><i title="Delete" class="icon-trash"></i> حذف</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="box-container-toggle box-container-closed">
+                    <div class="box-content form-box">
+                        <div class="dashboard-chart" id="dashboard-browser-chart" style="position: relative;"><div style="width: 400px; height: 200px; position: relative;" dir="ltr"><div style="left: 0px; top: 0px; width: 100%; height: 100%; position: absolute;"><svg xmlns="http://www.w3.org/2000/svg" style="overflow: hidden;" width="400" height="200"><defs id="defs" /><g><text font-family="Arial" font-size="11" font-weight="bold" fill="#000000" stroke="none" stroke-width="0" text-anchor="start" x="67" y="22.85">Browser Usage</text></g><g><rect fill="#ffffff" fill-opacity="0" stroke="none" stroke-width="0" x="250" y="38" width="84" height="83" /><g><rect fill="#ffffff" fill-opacity="0" stroke="none" stroke-width="0" x="250" y="38" width="84" height="11" /><g><text font-family="Arial" font-size="11" fill="#222222" stroke="none" stroke-width="0" text-anchor="start" x="265" y="47.35">Internet Explorer</text></g><rect fill="#3366cc" stroke="none" stroke-width="0" x="250" y="38" width="11" height="11" /></g><g><rect fill="#ffffff" fill-opacity="0" stroke="none" stroke-width="0" x="250" y="56" width="84" height="11" /><g><text font-family="Arial" font-size="11" fill="#222222" stroke="none" stroke-width="0" text-anchor="start" x="265" y="65.35">Google Chrome</text></g><rect fill="#dc3912" stroke="none" stroke-width="0" x="250" y="56" width="11" height="11" /></g><g><rect fill="#ffffff" fill-opacity="0" stroke="none" stroke-width="0" x="250" y="74" width="84" height="11" /><g><text font-family="Arial" font-size="11" fill="#222222" stroke="none" stroke-width="0" text-anchor="start" x="265" y="83.35">Opera</text></g><rect fill="#ff9900" stroke="none" stroke-width="0" x="250" y="74" width="11" height="11" /></g><g><rect fill="#ffffff" fill-opacity="0" stroke="none" stroke-width="0" x="250" y="92" width="84" height="11" /><g><text font-family="Arial" font-size="11" fill="#222222" stroke="none" stroke-width="0" text-anchor="start" x="265" y="101.35">Safari</text></g><rect fill="#109618" stroke="none" stroke-width="0" x="250" y="92" width="11" height="11" /></g><g><rect fill="#ffffff" fill-opacity="0" stroke="none" stroke-width="0" x="250" y="110" width="84" height="11" /><g><text font-family="Arial" font-size="11" fill="#222222" stroke="none" stroke-width="0" text-anchor="start" x="265" y="119.35">FireFox</text></g><rect fill="#990099" stroke="none" stroke-width="0" x="250" y="110" width="11" height="11" /></g></g><g><path fill="#264d99" stroke="#264d99" stroke-width="1" d="M 212 93.8 L 212 106.2 A 62 49.6 0 0 1 166.047 154.11 L 166.047 141.71 A 62 49.6 0 0 0 212 93.8" /><path fill="#264d99" stroke="#264d99" stroke-width="1" d="M 150 93.8 L 150 106.2 L 166.047 154.11 L 166.047 141.71" /><path fill="#3366cc" stroke="#3366cc" stroke-width="1" d="M 150 93.8 L 150 44.2 A 62 49.6 0 0 1 166.047 141.71 L 150 93.8 A 0 0 0 0 0 150 93.8" /><text font-family="Arial" font-size="11" fill="#ffffff" stroke="none" stroke-width="0" text-anchor="start" x="199.1162" y="92.7559">45.8%</text></g><g><path fill="#730073" stroke="#730073" stroke-width="1" d="M 90.1126 106.637 L 90.1126 119.037 A 62 49.6 0 0 1 88 106.2 L 88 93.8 A 62 49.6 0 0 0 90.1126 106.637" /><path fill="#730073" stroke="#730073" stroke-width="1" d="M 150 93.8 L 150 106.2 L 90.1126 119.037 L 90.1126 106.637" /><path fill="#990099" stroke="#990099" stroke-width="1" d="M 150 93.8 L 90.1126 106.637 A 62 49.6 0 0 1 150 44.2 L 150 93.8 A 0 0 0 0 0 150 93.8" /><text font-family="Arial" font-size="11" fill="#ffffff" stroke="none" stroke-width="0" text-anchor="start" x="113.308" y="76.3407">29.2%</text></g><g><path fill="#0c7112" stroke="#0c7112" stroke-width="1" d="M 106.159 128.872 L 106.159 141.272 A 62 49.6 0 0 1 90.1126 119.037 L 90.1126 106.637 A 62 49.6 0 0 0 106.159 128.872" /><path fill="#0c7112" stroke="#0c7112" stroke-width="1" d="M 150 93.8 L 150 106.2 L 106.159 141.272 L 106.159 128.872" /><path fill="#109618" stroke="#109618" stroke-width="1" d="M 150 93.8 L 106.159 128.872 A 62 49.6 0 0 1 90.1126 106.637 L 150 93.8 A 0 0 0 0 0 150 93.8" /><text font-family="Arial" font-size="11" fill="#ffffff" stroke="none" stroke-width="0" text-anchor="start" x="109.3169" y="115.4275">8.3%</text></g><g><path fill="#bf7300" stroke="#bf7300" stroke-width="1" d="M 133.953 141.71 L 133.953 154.11 A 62 49.6 0 0 1 106.159 141.272 L 106.159 128.872 A 62 49.6 0 0 0 133.953 141.71" /><path fill="#bf7300" stroke="#bf7300" stroke-width="1" d="M 150 93.8 L 150 106.2 L 133.953 154.11 L 133.953 141.71" /><path fill="#ff9900" stroke="#ff9900" stroke-width="1" d="M 150 93.8 L 133.953 141.71 A 62 49.6 0 0 1 106.159 128.872 L 150 93.8 A 0 0 0 0 0 150 93.8" /><text font-family="Arial" font-size="11" fill="#ffffff" stroke="none" stroke-width="0" text-anchor="start" x="127.7114" y="126.8686">8.3%</text></g><g><path fill="#a52b0e" stroke="#a52b0e" stroke-width="1" d="M 166.047 141.71 L 166.047 154.11 A 62 49.6 0 0 1 133.953 154.11 L 133.953 141.71 A 62 49.6 0 0 0 166.047 141.71" /><path fill="#dc3912" stroke="#dc3912" stroke-width="1" d="M 150 93.8 L 166.047 141.71 A 62 49.6 0 0 1 133.953 141.71 L 150 93.8 A 0 0 0 0 0 150 93.8" /><text font-family="Arial" font-size="11" fill="#ffffff" stroke="none" stroke-width="0" text-anchor="start" x="150" y="130.75">8.3%</text></g><g /></svg></div></div><div style="left: 410px; top: 210px; font-family: Arial; font-size: 11px; display: none; white-space: nowrap; position: absolute;">FireFox</div><div></div></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                {% endif %}
+        {% endfor %}
+        <ul>
+        <li>
+            <a class="btn btn-primary" href="{{ path('team_new') }}">
+               ایجاد تیم جدید
+            </a>
+        </li>
+    </ul>
+    {#<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>#}
+    {#<!-- Modal -->#}
+    {#<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">#}
+     {#<div class="modal-header">#}
+            {#<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>#}
+           {#<h3 id="myModalLabel">Modal header</h3>#}
+          {#</div>#}
+      {#<div class="modal-body">#}
+           {#<p>One fine body…</p>#}
+          {#</div>#}
+      {#<div class="modal-footer">#}
+            {#<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>#}
+            {#<button class="btn btn-primary">Save changes</button>#}
+          {#</div>#}
+    {#</div>#}
+{% endblock %}

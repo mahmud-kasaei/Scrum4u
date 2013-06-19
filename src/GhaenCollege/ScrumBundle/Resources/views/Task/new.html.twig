@@ -1,0 +1,71 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+   {% block stylesheet %} <style>.lblheight{height: 35px}
+       .submit_footer{clear: both;padding-right: 40%}
+   </style>  {% endblock %}
+{% block container -%}
+    <h1>ایجاد وظیفه</h1>
+
+    <form action="{{ path('my_task_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_errors(form) }}
+        {{  form_widget(form._token) }}
+    <input name="story_id" id="story_id" type="hidden" value="{{ story_id }}">
+        <div class="span4">
+            {{ form_widget(form.builder) }}
+            {{ form_widget(form.responsible) }}
+            {{ form_widget(form.status) }}
+            {{ form_widget(form.backlog) }}
+            {{ form_widget(form.description) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"backlog.Builder"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Responsible"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Status"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Sprint"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Description"|trans({},"backlog","fr") }}
+            </label>
+        </div>
+        <div class="span4">
+            {{ form_widget(form.title) }}
+            {{ form_widget(form.estimate) }}
+        </div>
+        <div class="span2">
+            <label class="lblheight">
+                {{"backlog.Title"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Importance"|trans({},"backlog","fr") }}
+            </label>
+            <label class="lblheight">
+                {{"backlog.Epic"|trans({},"backlog","fr") }}
+            </label class="lblheight">
+            <label class="lblheight">
+                {{"backlog.Estimate"|trans({},"backlog","fr") }}
+            </label class="lblheight">
+            <label>
+                {{"backlog.Howitsdemo"|trans({},"backlog","fr") }}
+            </label>
+        </div>
+
+
+        <p>
+            <button type="submit">Create</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('task') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+ghaen_college_scrum:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_user_bundle:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /

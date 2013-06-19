@@ -1,0 +1,30 @@
+test:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:Test:index" }
+
+test_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:Test:show" }
+
+test_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:Test:new" }
+
+test_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:Test:create" }
+    requirements: { _method: post }
+
+test_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:Test:edit" }
+
+test_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:Test:update" }
+    requirements: { _method: post|put }
+
+test_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:Test:delete" }
+    requirements: { _method: post|delete }

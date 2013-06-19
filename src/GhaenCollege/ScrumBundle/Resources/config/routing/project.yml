@@ -1,0 +1,33 @@
+project:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:index" }
+
+project_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:show" }
+
+project_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:new" }
+
+project_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:create" }
+    requirements: { _method: post }
+
+project_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:edit" }
+
+project_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:update" }
+    requirements: { _method: post|put }
+
+project_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:delete" }
+    requirements: { _method: post|delete }
+project_search:
+    pattern:  /search
+    defaults: { _controller: "GhaenCollegeScrumBundle:Project:search" }

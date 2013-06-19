@@ -1,0 +1,59 @@
+ghaen_college_scrum_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: GhaenCollegeScrumBundle:Default:index }
+
+_home_route:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/my_route/home_route.yml"
+    prefix:   /admin
+
+_home_page:
+    pattern:  /
+    defaults: { _controller: GhaenCollegeScrumBundle:Default:scrum }
+
+GhaenCollegeScrumBundle_backlog:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/backlog.yml"
+    prefix:   /backlog
+
+GhaenCollegeScrumBundle_epic:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/epic.yml"
+    prefix:   /epic
+
+GhaenCollegeScrumBundle_project:
+   resource: "@GhaenCollegeScrumBundle/Resources/config/routing/project.yml"
+   prefix:   /admin/project
+
+GhaenCollegeScrumBundle_schedule:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/schedule.yml"
+    prefix:   /schedule
+
+GhaenCollegeScrumBundle_sprint:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/sprint.yml"
+    prefix:   /sprint
+
+GhaenCollegeScrumBundle_status:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/status.yml"
+    prefix:   /status
+
+GhaenCollegeScrumBundle_task:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/task.yml"
+    prefix:   /task
+
+GhaenCollegeScrumBundle_test:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/test.yml"
+    prefix:   /test
+
+GhaenCollegeScrumBundle_team:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/team.yml"
+    prefix:   /admin/team
+
+GhaenCollegeScrumBundle_time_unit:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/timeunit.yml"
+    prefix:   /time_unit
+
+GhaenCollegeScrumBundle_user_group:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/routing/usergroup.yml"
+    prefix:   /user_group
+
+_home_route2:
+    resource: "@GhaenCollegeScrumBundle/Resources/config/my_route/task.yml"
+    prefix:   /

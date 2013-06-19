@@ -1,0 +1,10 @@
+my_task_new:
+    pattern:  /{story_id}/new
+    defaults: { _controller: "GhaenCollegeScrumBundle:myTask:new" }
+    requirements:
+      motor  : \d+
+
+my_task_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:myTask:create" }
+    requirements: { _method: post }

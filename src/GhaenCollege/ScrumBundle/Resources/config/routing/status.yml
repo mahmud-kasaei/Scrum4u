@@ -1,0 +1,30 @@
+status:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:Status:index" }
+
+status_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:Status:show" }
+
+status_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:Status:new" }
+
+status_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:Status:create" }
+    requirements: { _method: post }
+
+status_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:Status:edit" }
+
+status_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:Status:update" }
+    requirements: { _method: post|put }
+
+status_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:Status:delete" }
+    requirements: { _method: post|delete }

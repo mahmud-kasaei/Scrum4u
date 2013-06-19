@@ -1,0 +1,38 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+{% block stylesheet %}{% endblock %}
+{% block container -%}
+    <h1>ایجاد زمانبندی</h1>
+
+    <form action="{{ path('schedule_create') }}" method="post" {{ form_enctype(form) }}>
+        {#{{ form_widget(form) }}#}
+        {{ form_errors(form) }}
+        {{  form_widget(form._token) }}
+        <label>
+            {{"schedule.title"|trans({},"schedule","fr") }}
+        </label>
+        {{ form_widget(form.title) }}</br></br>
+        <label>
+            {{"schedule.description"|trans({},"schedule","fr") }}
+        </label>
+        {{ form_widget(form.description) }}</br></br>
+        <label>
+            {{"schedule.gap"|trans({},"schedule","fr") }}
+        </label>
+        {{ form_widget(form.gap) }}</br></br>
+        <label>
+            {{"schedule.length"|trans({},"schedule","fr") }}
+        </label>
+        {{ form_widget(form.length) }}</br></br>
+        <p>
+            <button type="submit">ایجاد</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('schedule') }}">
+            برگشت به لیست
+        </a>
+    </li>
+</ul>
+{% endblock %}

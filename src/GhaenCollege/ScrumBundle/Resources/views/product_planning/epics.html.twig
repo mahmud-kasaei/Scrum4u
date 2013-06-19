@@ -1,0 +1,142 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('bundles/scrumassets/css/product_planning/epics/jquery.treetable.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/scrumassets/css/product_planning/epics/jquery.treetable.theme.default.css')}}" type="text/css" />
+{% endblock %}
+{% block container %}
+    <br/>
+    <div id="main">
+    <table id="example-advanced">
+    <caption>
+        <a href="#" onclick="jQuery('#example-advanced').treetable('expandAll'); return false;">Expand all</a>
+        <a href="#" onclick="jQuery('#example-advanced').treetable('collapseAll'); return false;">Collapse all</a>
+    </caption>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Kind</th>
+        <th>Size</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-tt-id='1'><td><span class='file'>Acknowledgements.rtf</span></td><td>File</td><td>480.95 KB</td></tr>
+    <tr data-tt-id='2'><td><span class='folder'>CHUD</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='2-1' data-tt-parent-id='2'><td><span class='folder'>amber</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='2-1-1' data-tt-parent-id='2-1'><td><span class='file'>AmberTraceFormats.pdf</span></td><td>File</td><td>124.46 KB</td></tr>
+    <tr data-tt-id='2-2' data-tt-parent-id='2'><td><span class='folder'>BigTop</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='2-2-1' data-tt-parent-id='2-2'><td><span class='file'>BigTopUserGuide.pdf</span></td><td>File</td><td>1314.71 KB</td></tr>
+    <tr data-tt-id='2-3' data-tt-parent-id='2'><td><span class='folder'>Saturn</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='2-3-1' data-tt-parent-id='2-3'><td><span class='file'>SaturnUserGuide.pdf</span></td><td>File</td><td>694.29 KB</td></tr>
+    <tr data-tt-id='2-4' data-tt-parent-id='2'><td><span class='folder'>Shark</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='2-4-1' data-tt-parent-id='2-4'><td><span class='file'>SharkUserGuide.pdf</span></td><td>File</td><td>12902.51 KB</td></tr>
+    <tr data-tt-id='2-5' data-tt-parent-id='2'><td><span class='folder'>simg4</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='2-6' data-tt-parent-id='2'><td><span class='folder'>simg4_plus</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='2-7' data-tt-parent-id='2'><td><span class='folder'>simg5</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='3'><td><span class='folder'>simg5</span></td><td>Folder</td><td>--</td></tr>
+    <tr data-tt-id='3-1' data-tt-parent-id='3'><td><span class='folder'>amber</span></td><td>Folder</td><td>--</td></tr>
+    </tbody>
+    </table>
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/jquery-ui.js"></script>
+    <script src="javascripts/src/jquery.treetable.js"></script>
+    <script>
+        $("#example-basic").treetable({ expandable: true });
+        $("#example-basic-static").treetable();
+        $("#example-basic-expandable").treetable({ expandable: true });
+        $("#example-advanced").treetable({ expandable: true });
+        // Highlight selected row
+        $("#example-advanced tbody tr").mousedown(function() {
+            $("tr.selected").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        // Drag & Drop Example Code
+        $("#example-advanced .file, #example-advanced .folder").draggable({
+            helper: "clone",
+            opacity: .75,
+            refreshPositions: true, // Performance?
+            revert: "invalid",
+            revertDuration: 300,
+            scroll: true
+        });
+        $("#example-advanced .folder").each(function() {
+            $(this).parents("tr").droppable({
+                accept: ".file, .folder",
+                drop: function(e, ui) {
+                    var droppedEl = ui.draggable.parents("tr");
+                    $("#example-advanced").treetable("move", droppedEl.data("ttId"), $(this).data("ttId"));
+                },
+                hoverClass: "accept",
+                over: function(e, ui) {
+                    var droppedEl = ui.draggable.parents("tr");
+                    if(this != droppedEl[0] && !$(this).is(".expanded")) {
+                        $("#example-advanced").treetable("expandNode", $(this).data("ttId"));
+                    }
+                }
+            });
+        });
+        $("form#reveal").submit(function() {
+            var nodeId = $("#revealNodeId").val()
+            try {
+                $("#example-advanced").treetable("reveal", nodeId);
+            }
+            catch(error) {
+                alert(error.message);
+            }
+            return false;
+        });
+    </script>
+    </div>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+        $(".subnav").addClass("hidden");
+        $("#sub-menu-blog").removeClass("hidden");
+        $(".mymain-nav").removeClass("active");
+        $("#menu-blog").addClass("active");
+    </script>
+    <script src="{{asset('bundles/scrumassets/js/treeable_table/jquery-ui.js')}}"></script>
+    <script src="{{asset('bundles/scrumassets/js/treeable_table/jquery.treetable.js')}}"></script>
+    <script>
+        $("#example-advanced").treetable({ expandable: true });
+        // Highlight selected row
+        $("#example-advanced tbody tr").mousedown(function() {
+            $("tr.selected").removeClass("selected");
+            $(this).addClass("selected");
+        });
+        // Drag & Drop Example Code
+        $("#example-advanced .file, #example-advanced .folder").draggable({
+            helper: "clone",
+            opacity: .75,
+            refreshPositions: true, // Performance?
+            revert: "invalid",
+            revertDuration: 300,
+            scroll: true
+        });
+        $("#example-advanced .folder").each(function() {
+            $(this).parents("tr").droppable({
+                accept: ".file, .folder",
+                drop: function(e, ui) {
+                    var droppedEl = ui.draggable.parents("tr");
+                    $("#example-advanced").treetable("move", droppedEl.data("ttId"), $(this).data("ttId"));
+                },
+                hoverClass: "accept",
+                over: function(e, ui) {
+                    var droppedEl = ui.draggable.parents("tr");
+                    if(this != droppedEl[0] && !$(this).is(".expanded")) {
+                        $("#example-advanced").treetable("expandNode", $(this).data("ttId"));
+                    }
+                }
+            });
+        });
+        $("form#reveal").submit(function() {
+            var nodeId = $("#revealNodeId").val()
+            try {
+                $("#example-advanced").treetable("reveal", nodeId);
+            }
+            catch(error) {
+                alert(error.message);
+            }
+            return false;
+        });
+    </script>
+{% endblock %}

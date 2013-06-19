@@ -1,0 +1,168 @@
+{% extends "GhaenCollegeScrumBundle:Parent:layout.html.twig" %}
+
+{% block stylesheet -%}
+    
+{% endblock %}
+{% block container -%}
+    <h1>ویرایش اسپرینت</h1>
+
+    <form action="{{ path('sprint_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+        <input type="hidden" name="_method" value="PUT" />
+        {#{{ form_widget(edit_form) }}#}
+        {{ form_errors(edit_form) }}
+        {{  form_widget(edit_form._token) }}
+        <div class="row-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                    {{ form_widget(edit_form.endDate) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.endDate"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+                <div class="span4">
+                    {{ form_widget(edit_form.project) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.project"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span4">
+                    {{ form_widget(edit_form.timeunit) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.timeunit"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+                <div class="span4">
+                    {{ form_widget(edit_form.schedule) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.schedule"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span4">
+                    {{ form_widget(edit_form.status) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.status"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+                <div class="span4">
+                    {{ form_widget(edit_form.builder) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.builder"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span4">
+                    {{ form_widget(edit_form.team) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.team"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+                <div class="span4">
+                    {{ form_widget(edit_form.goal) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.goal"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span4">
+                    {{ form_widget(edit_form.presentationDemoDate) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.presentationDemoDate"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+                <div class="span4">
+                    {{ form_widget(edit_form.title) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.title"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span4">
+                    {{ form_widget(edit_form.scrumMeetingTime) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.scrumMeetingTime"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+                <div class="span4">
+                    {{ form_widget(edit_form.scrumMeetingPlace) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.scrumMeetingPlace"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span4">
+                    {{ form_widget(edit_form.createDate) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.createDate"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+                <div class="span4">
+                    {{ form_widget(edit_form.startDate) }}
+                </div>
+                <div class="span2">
+                    <label>
+                        {{"sprint.startDate"|trans({},"sprint","fr") }}
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        <p>
+            <button type="submit">ویرایش</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('sprint') }}">
+            برگشت به لیست
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('sprint_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">حذف</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

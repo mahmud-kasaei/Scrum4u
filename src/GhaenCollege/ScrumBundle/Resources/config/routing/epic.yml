@@ -1,0 +1,30 @@
+epic:
+    pattern:  /
+    defaults: { _controller: "GhaenCollegeScrumBundle:Epic:index" }
+
+epic_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GhaenCollegeScrumBundle:Epic:show" }
+
+epic_new:
+    pattern:  /new
+    defaults: { _controller: "GhaenCollegeScrumBundle:Epic:new" }
+
+epic_create:
+    pattern:  /create
+    defaults: { _controller: "GhaenCollegeScrumBundle:Epic:create" }
+    requirements: { _method: post }
+
+epic_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GhaenCollegeScrumBundle:Epic:edit" }
+
+epic_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GhaenCollegeScrumBundle:Epic:update" }
+    requirements: { _method: post|put }
+
+epic_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GhaenCollegeScrumBundle:Epic:delete" }
+    requirements: { _method: post|delete }
